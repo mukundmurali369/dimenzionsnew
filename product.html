@@ -218,16 +218,23 @@
                             <h5 class="gray">Price</h5>
                         </div>
                         <div class="col-lg-9 col-6">
-                            <h5 class="red">₹ 450.00</h5>
+                            <h5 class="red">₹ <span id="rate1">450</span> </h5>
                         </div>
                     </div>
                     <div class="row pb-2">
                         <div class="col-lg-3 col-6">
                             <h5 class="gray" style="font-weight: 500;">Quantity</h5>
                         </div>
-                        <div class="col-lg-9 col-6">
+                        <div class="col-lg-3 col-6">
+                            <div class="p-0 m-0 flex">
+                                <button onclick="decrement()"
+                                        class="bgred px-2 m-0 text-light rounded-circle">-</button>
+                                    <input id=demoInput type=number min=0 max=100
+                                        class="p-2 m-0 border-0 text-center gray w-50 " placeholder="0" >
+                                    <button onclick="increment()"
+                                        class="bgred px-2 m-0  text-light rounded-circle">+</button>
 
-                            <h5 class="red" style="font-weight: 500;">₹ 450.00</h5>
+                            </div>
                         </div>
                     </div>
 
@@ -285,9 +292,16 @@
                         <div class="col-lg-3 col-6">
                             <h5 class="gray" style="font-weight: 500;">Quantity</h5>
                         </div>
-                        <div class="col-lg-9 col-6">
+                        <div class="col-lg-3 col-6">
+                            <div class="p-0 m-0 flex">
+                                <button onclick="decrement2()"
+                                    class="bgred px-2 m-0 text-light rounded-circle">-</button>
+                                <input id=demoInput2 type=number min=0 max=100
+                                    class="p-2 m-0 border-0 text-center gray w-50 " placeholder="0" >
+                                <button onclick="increment2()"
+                                    class="bgred px-2 m-0  text-light rounded-circle">+</button>
 
-                            <h5 class="red" style="font-weight: 500;">₹ 450.00</h5>
+                            </div>
                         </div>
                     </div>
 
@@ -323,8 +337,34 @@
 
         </div>
         </div>
+        <script>
+            function increment() {
+                document.getElementById('demoInput').stepUp();
+                
+            }
+            function decrement() {
+                
+                document.getElementById('demoInput').stepDown();
+            }
+        </script>
+        <script>
+            function increment2() {
+                document.getElementById('demoInput2').stepUp();
+                
+                
+            }
+            function decrement2() {
+              
+                document.getElementById('demoInput2').stepDown();
+            }
+        </script>
+
 
         <style>
+            .bgred {
+                background-color: rgb(255, 5, 72);
+                border: 0;
+            }
             .flex {
                 display: flex;
                 align-items: center;
